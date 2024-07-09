@@ -8,7 +8,7 @@ node application to run redis(bull) queues and add jobs via http request
 
 ### Requirements
 
-- You need to install the [Docker](https://nodejs.org/en/download/)](https://www.docker.com/)
+- You need to install the [Docker](https://www.docker.com/)
   
 **Clone the project and access the folder**
 
