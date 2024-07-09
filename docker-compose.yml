@@ -1,0 +1,32 @@
+services:
+  app:
+    build: ./
+    command: npm run dev
+    ports:
+      - "3334:3334"
+    volumes:
+      - app:/usr/src/app
+    develop:
+      watch:
+        - action: sync+restart
+          path: ./
+          target: /usr/src/app
+          ignore:
+            - node_modules/
+
+  redis:
+    image: "redis:latest"
+    volumes:
+      - redis:/data
+    ports:
+      - "6379:6379"
+  
+  chromedriver:
+    image: "selenium/standalone-chrome:latest"
+    ports:
+      - "4444:4444"
+    restart: "no"
+  
+volumes:
+  redis:
+  app:
