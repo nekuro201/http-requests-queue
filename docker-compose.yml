@@ -21,12 +21,6 @@ services:
     ports:
       - "6379:6379"
   
-  chromedriver:
-    image: "selenium/standalone-chrome:latest"
-    ports:
-      - "4444:4444"
-    restart: "no"
-  
 volumes:
   redis:
   app:
