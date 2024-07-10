@@ -8,6 +8,7 @@
     "dev": "npm-run-all --parallel server-ts queue-ts",
     "server-ts": "tsx watch src/server.ts",
     "queue-ts": "tsx watch src/queue.ts",
+    "bot": "tsx watch src/bot.ts",
     "lint": "eslint src --ext .ts --fix"
   },
   "keywords": [],

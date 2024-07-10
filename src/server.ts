@@ -29,8 +29,21 @@ app.get('/', (req, res) => {
 })
 app.get('/say-hello', (req, res) => {
   const data = {
-    id: '1',
-    text: 'hello',
+    id: '402',
+    text: 'manual-hello',
+  } as RegistrationSayHelloData
+
+  queueSayHello.add(data, registrationSayHello.options)
+
+  return res.writeHead(201).end()
+})
+app.post('/say-hello', (req, res) => {
+  const id = req.body.id
+  const text = req.body.text
+
+  const data = {
+    id,
+    text,
   } as RegistrationSayHelloData
 
   queueSayHello.add(data, registrationSayHello.options)
